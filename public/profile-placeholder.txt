@@ -1,0 +1,10 @@
+PROFILE IMAGE PLACEHOLDER
+
+Please add your profile image to this public folder with the name "profile.jpg"
+
+The image from your second upload should be saved as:
+- File name: profile.jpg
+- Location: public/profile.jpg
+- Recommended: Square aspect ratio (400x400px or larger)
+
+This will be used in the Hero section of your portfolio website.

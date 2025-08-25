@@ -1,0 +1,91 @@
+{
+  "hero": {
+    "name": "Prithika Sathish",
+    "role": "Software Developer & AI Enthusiast",
+    "tagline": "Building products at the intersection of full-stack engineering, AI/ML, and data-driven solutions.",
+    "links": {
+      "github": "https://github.com/prithika-sathish",
+      "linkedin": "https://linkedin.com/in/prithika-sathish-78422022b",
+      "resume": "/Prithika_Sathish_Resume.pdf",
+      "email": "prithikasathish.dev@gmail.com"
+    },
+    "profileImage": "/profile.jpg"
+  },
+
+  "experience": [
+    {
+      "role": "Project Intern",
+      "company": "SRMIST Vadapalani",
+      "date": "Nov 2024 – Dec 2024",
+      "details": [
+        "Worked across Agile SDLC (requirement gathering → deployment).",
+        "Built REST APIs with CSV export for structured, downloadable data access.",
+        "Optimized search/filter algorithms for <200 ms response on datasets >1,000 records.",
+        "Applied DB indexing and load optimization for high availability."
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "Chakra Markets – Retail Trading Intelligence Suite",
+      "description": "Real-time analytics platform with portfolio insights, goal-based allocation, and strategy payoff graphs using live NSE and Yahoo Finance APIs.",
+      "tech": ["Vite.js", "Node.js", "D3.js", "Material UI"],
+      "links": {
+        "github": "https://github.com/prithika-sathish/Chakramarkets"
+      }
+    },
+    {
+      "name": "E-Waste Collector",
+      "description": "Gamified e-waste collection platform with YOLOv8 detection, QR tagging, and NGO collaboration for impact tracking.",
+      "tech": ["YOLOv8", "Arduino", "Node.js"],
+      "links": {
+        "github": "https://github.com/prithika-sathish/E-Collector"
+      }
+    },
+    {
+      "name": "HerHaven – Women Wellness Platform",
+      "description": "Platform for scheme discovery, financial literacy, job discovery, and SOS safety features with location tracking.",
+      "tech": ["Node.js", "React", "Firebase"],
+      "links": {
+        "github": "https://github.com/prithika-sathish/Herhaven"
+      }
+    },
+    {
+      "name": "JobVerse – Job Simulation & Preparation",
+      "description": "Interactive platform with role simulations, AI-driven guidance, resume parsing, and skill-tracking workflows via n8n + Gemini API.",
+      "tech": ["n8n", "Gemini API", "React"],
+      "links": {
+        "github": "https://github.com/prithika-sathish/JOB-Verse"
+      }
+    }
+  ],
+
+  "achievements": [
+    "Winner – Build to Deploy (Mar 2025): 1st place / 100+ teams (ML model in 12 hrs).",
+    "Winner – Hack Horizon (Oct 2024): 1st place / 80+ teams (real-time solution).",
+    "Winner – Vertex Innovate (Feb 2025): 1st place / 1000+ participants in software domain.",
+    "Third Place – ImpactX 2.0 (Jan 2025).",
+    "Semi-Finalist – L&T CreaTech Challenge (Top 2%)."
+  ],
+
+    "skills": {
+    "frontend": ["HTML5", "CSS", "JavaScript", "TypeScript", "React", "Tailwind CSS", "Material UI"],
+    "backend": ["Node.js", "Express.js", "Python (Flask, Django, FastAPI)"],
+    "ai_ml": ["TensorFlow", "PyTorch", "OpenCV", "LangChain", "Hugging Face"],
+    "database_cloud": ["MySQL", "PostgreSQL", "MongoDB", "Firebase", "Supabase"],
+    "tools": ["Git", "Docker", "GitHub Actions", "REST APIs"]
+  },
+
+  "certifications": [
+    "Machine Learning – Andrew Ng (Coursera)",
+    "Complete AI, ML & Data Science Bootcamp – Udemy",
+    "Cloud Computing Specialization – Coursera (Ongoing)"
+  ],
+
+  "contact": {
+    "email": "prithikasathish.dev@gmail.com",
+    "linkedin": "https://linkedin.com/in/prithika-sathish-78422022b",
+    "github": "https://github.com/prithika-sathish"
+  }
+}
