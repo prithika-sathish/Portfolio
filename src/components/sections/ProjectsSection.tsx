@@ -156,17 +156,7 @@ const ProjectsSection = () => {
                     <span className="font-medium">GitHub</span>
                   </a>
                   
-                  {project.links.demo && (
-                    <a
-                      href={project.links.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-neon-green/20 hover:bg-neon-green/30 text-neon-green rounded-lg transition-all duration-300 group/link"
-                    >
-                      <ExternalLink className="w-5 h-5 group-hover/link:scale-110 transition-transform" />
-                      <span className="font-medium">Live Demo</span>
-                    </a>
-                  )}
+        
                 </motion.div>
               </div>
             </motion.div>
