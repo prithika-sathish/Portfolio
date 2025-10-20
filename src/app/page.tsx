@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import Navbar from '@/components/Navbar'
 import HeroSection from '@/components/sections/HeroSection'
 import ExperienceSection from '@/components/sections/ExperienceSection'
 import LeadershipSection from '@/components/sections/LeadershipSection'
@@ -35,6 +36,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen">
       <BackgroundEffects currentSection={currentSection} />
+      <Navbar />
       
       <motion.div
         initial={{ opacity: 0 }}

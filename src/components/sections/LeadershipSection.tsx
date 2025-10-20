@@ -235,3 +235,4 @@ const LeadershipSection = () => {
 }
 
 export default LeadershipSection
+

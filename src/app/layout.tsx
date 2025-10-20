@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import CursorFollower from '@/components/CursorFollower'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,8 +23,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-black text-white overflow-x-hidden`}>
+    <html lang="en" className="scroll-smooth dark">
+      <body className={`${inter.className} overflow-x-hidden transition-colors duration-300`}>
+        <CursorFollower />
         {children}
       </body>
     </html>

@@ -3,27 +3,99 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-gray-200;
+  :root {
+    --color-background: 0 0 0;
+    --color-text: 255 255 255;
+    --color-primary: 0 255 65;
+    --color-secondary: 59 130 246;
+    --color-accent: 139 92 246;
+    --color-border: 75 85 99;
+    --color-card: 17 24 39;
+    --color-card-border: 55 65 81;
+    --color-card-hover: 31 41 55;
+    --glass-background: 255 255 255;
+    --glass-border: 255 255 255;
+    --glass-opacity: 0.1;
+    --shadow-color: 0 255 65;
+    --shadow-strength: 0.1;
+    --color-text-gradient: #ffffff;
+    --color-text-gradient-highlight: #f8fafc;
+    --color-text-gradient-secondary: #d1d5db;
   }
+
+  * {
+    @apply border-gray-200 dark:border-gray-700;
+  }
+  
   body {
-    @apply bg-pitch-black text-white overflow-x-hidden;
+    @apply bg-background text-text overflow-x-hidden;
+    cursor: none;
+  }
+  
+  a, button, input, textarea, select {
+    cursor: none;
   }
 }
 
 @layer components {
   .glass {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl;
+    @apply backdrop-blur-md border rounded-xl transition-all duration-500;
+    background-color: rgb(var(--glass-background) / var(--glass-opacity));
+    border-color: rgb(var(--glass-border) / 0.2);
+    box-shadow: 
+      0 8px 32px rgba(var(--shadow-color), var(--shadow-strength)),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+    transform-style: preserve-3d;
+    perspective: 1000px;
   }
   
   .glass-hover {
-    @apply hover:bg-white/20 transition-all duration-300;
+    @apply transition-all duration-500;
+  }
+  
+  .glass-hover:hover {
+    background-color: rgb(var(--glass-background) / calc(var(--glass-opacity) + 0.1));
+    transform: translateY(-8px) translateZ(20px) rotateX(2deg);
+    box-shadow: 
+      0 20px 60px rgba(var(--shadow-color), calc(var(--shadow-strength) + 0.15)),
+      inset 0 2px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass-card {
+    @apply glass;
+    background: linear-gradient(
+      135deg,
+      rgb(var(--glass-background) / calc(var(--glass-opacity) + 0.05)) 0%,
+      rgb(var(--glass-background) / var(--glass-opacity)) 100%
+    );
+    border-width: 1.5px;
+    border-image: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.1)
+    ) 1;
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-12px) scale(1.02) rotateX(5deg) rotateY(-2deg);
+    box-shadow: 
+      0 25px 70px rgba(var(--shadow-color), calc(var(--shadow-strength) + 0.2)),
+      inset 0 3px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -3px 0 rgba(0, 0, 0, 0.15);
   }
   
   .neon-button {
-    @apply bg-neon-green text-black font-semibold px-6 py-3 rounded-lg 
-           hover:bg-neon-green/80 transition-all duration-300 
-           shadow-lg hover:shadow-neon-green/50;
+    @apply bg-primary text-black font-semibold px-6 py-3 rounded-lg 
+           transition-all duration-300;
+    box-shadow: 0 0 15px rgba(var(--color-primary), 0.5);
+  }
+  
+  .neon-button:hover {
+    @apply bg-primary/90;
+    box-shadow: 0 0 25px rgba(var(--color-primary), 0.7);
+    transform: translateY(-2px);
   }
   
   .section-padding {
@@ -33,24 +105,139 @@
   .container-max {
     @apply max-w-7xl mx-auto;
   }
+  
+  /* Advanced transitions */
+  .slide-up-fade-in {
+    @apply opacity-0 translate-y-8;
+    animation: slideUpFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .slide-down-fade-in {
+    @apply opacity-0 -translate-y-8;
+    animation: slideDownFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .slide-left-fade-in {
+    @apply opacity-0 translate-x-8;
+    animation: slideLeftFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .slide-right-fade-in {
+    @apply opacity-0 -translate-x-8;
+    animation: slideRightFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .scale-fade-in {
+    @apply opacity-0 scale-95;
+    animation: scaleFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .stagger-item {
+    opacity: 0;
+  }
+  
+  .stagger-container:hover .stagger-item {
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  .stagger-container:hover .stagger-item:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  
+  .stagger-container:hover .stagger-item:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  
+  .stagger-container:hover .stagger-item:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  
+  .stagger-container:hover .stagger-item:nth-child(5) {
+    animation-delay: 0.4s;
+  }
 }
 
-/* Custom scrollbar */
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeftFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRightFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar - theme aware */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgb(var(--color-background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 255, 136, 0.5);
-  border-radius: 4px;
+  background: linear-gradient(180deg, rgba(0, 255, 136, 0.6), rgba(0, 128, 255, 0.6));
+  border-radius: 5px;
+  border: 2px solid rgb(var(--color-background));
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 255, 136, 0.7);
+  background: linear-gradient(180deg, rgba(0, 255, 136, 0.8), rgba(0, 128, 255, 0.8));
 }
 
 /* Smooth scrolling */

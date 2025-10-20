@@ -6,6 +6,7 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -23,6 +24,13 @@ const config: Config = {
         'void-black': '#050505',
         'matrix-green': '#00ff00',
         'cyber-blue': '#00d4ff',
+        // CSS Variable based colors for theme switching
+        background: 'rgb(var(--color-background) / <alpha-value>)',
+        text: 'rgb(var(--color-text) / <alpha-value>)',
+        primary: 'rgb(var(--color-primary) / <alpha-value>)',
+        secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
+        accent: 'rgb(var(--color-accent) / <alpha-value>)',
+        card: 'rgb(var(--color-card) / <alpha-value>)',
       },
       backdropBlur: {
         'xs': '2px',

@@ -119,7 +119,7 @@ const HeroSection = () => {
                     ease: "easeInOut"
                   }}
                   style={{
-                    backgroundImage: 'linear-gradient(110deg, #ffffff 0%, #ffffff 40%, #f8fafc 50%, #ffffff 60%, #d1d5db 100%)',
+                    backgroundImage: 'linear-gradient(110deg, var(--color-text-gradient, #1e293b) 0%, var(--color-text-gradient, #1e293b) 40%, var(--color-text-gradient-highlight, #334155) 50%, var(--color-text-gradient, #1e293b) 60%, var(--color-text-gradient-secondary, #475569) 100%)',
                     backgroundSize: '200% 100%',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
